@@ -11,7 +11,7 @@ def prompt_maker():
     Stock: {books[0]['book_stock']}
     Scraped at: {books[0]['scraped_at']}
 
-    Write a concise, neutral summary in 4 sentences.
+    Write a concise, neutral summary. You can also give a brief about what the book is about by searching the title of the book
     """
 
 
