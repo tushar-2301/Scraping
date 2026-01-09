@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            font-family:serif;
+            margin: 40px;
+        }    
+        h1{
+            text-align: center;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .book{
+            background-color: rgba(247, 247, 178, 0.237);
+            border: 10px solid white;
+            padding: 30px;
+            text-align: center;
+        }
+        .books_grid{
+            display: grid;
+            grid-template-columns:repeat(3, 1fr);
 
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Newsletter</title>
+</head>
+<body>
+    <h1> BookstoScrape - Newsletter</h1>
+    <h3> Total Books : {{books | length}}</h3>
+
+    <div class="books_grid">
+        {% for book in books %}
+            <div class="book">
+                <h2> {{book.book_title}} </h2>
+                <img src="{{book.book_cover_img}}">
+                <p><b>Price</b> : £{{book.book_price_num}}</p>
+                <p><b>Rating</b> : {{ book.book_star_num }} / 5</p>
+                <p><b>Stock</b>  : {{ book.book_stock }}</p>
+                <p><b>Scraped</b>: {{ book.scraped_at }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
